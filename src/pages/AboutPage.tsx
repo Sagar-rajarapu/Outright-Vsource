@@ -1,7 +1,115 @@
-
 import { useEffect } from "react";
 import SectionTitle from "@/components/SectionTitle";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import styled from 'styled-components';
+
+const StyledTeamWrapper = styled.div`
+.team-details-area {
+    padding: 50px 0 140px !important;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Exo", sans-serif;
+  }
+
+  h2.title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: black;
+  }
+
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .profile-card {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: 0.6s ease-in-out;
+    text-align: center;
+  }
+
+  .profile-card:hover {
+    border-radius: 10px;
+    height: 260px;
+  }
+
+  .profile-card .img {
+    width: 100%;
+    height: 100%;
+    transition: 0.6s ease-in-out;
+    z-index: 99;
+  }
+
+  .profile-card:hover .img {
+    transform: translateY(-60px);
+  }
+
+  .img img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: 0.6s ease-in-out;
+  }
+
+  .profile-card:hover img {
+    border-radius: 10px;
+  }
+
+  .caption {
+    transform: translateY(-80px);
+    opacity: 0;
+    transition: 0.6s ease-in-out;
+  }
+
+  .profile-card:hover .caption {
+    opacity: 1;
+  }
+
+  .caption h3 {
+    font-size: 21px;
+    margin: 10px 0 5px;
+  }
+
+  .caption p {
+    font-size: 15px;
+    color: #0c52a1;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .profile-card {
+      width: 180px;
+      height: 180px;
+      padding: 20px;
+    }
+
+    .profile-card:hover {
+      height: 230px;
+    }
+
+    .caption h3 {
+      font-size: 18px;
+    }
+
+    .caption p {
+      font-size: 14px;
+    }
+  }
+`;
 
 const AboutPage = () => {
   // Scroll to top on page load
@@ -10,34 +118,407 @@ const AboutPage = () => {
   }, []);
 
   const teamMembers = [
+    
+  {
+    "name": "Mr. Mohammed Mustafa",
+    "position": "Founder",
+    "image": "https://vsourceoverseas.com/uploads/about_team/1698599558.jpg",
+    "bio": "VSOURCE COMPANY"
+  },
+  {
+    "name": "Mr. Sai Siva Nag",
+    "position": "Friend of Mr. Mustafa",
+    "image": "https://vsourceoverseas.com/uploads/about_team/SIVASIR.jpeg",
+    "bio": "20 YEARS WITH VSOURCE"
+  },
+  {
+    "name": "Mr. Nagender Rao",
+    "position": "Managing Director",
+    "image": "https://vsourceoverseas.com/uploads/about_team/dfg354d53.jpeg",
+    "bio": "12 YEARS WITH VSOURCE"
+  },
+  {
+    "name": "Mr. Charan Teja",
+    "position": "CEO",
+    "image": "https://vsourceoverseas.com/uploads/about_team/sddsccDCD.jpeg",
+    "bio": "8 YEARS WITH VSOURCE"
+  },
+  {
+    "name": "Mr. Y Ranjith",
+    "position": "CFO",
+    "image": "https://vsourceoverseas.com/uploads/about_team/YR.jpg",
+    "bio": "12 YEARS WITH VSOURCE"
+  },
+  {
+    "name": "Mr. Shaik Yasin",
+    "position": "Executive Director",
+    "image": "https://vsourceoverseas.com/uploads/about_team/1698618435.jpg",
+    "bio": "8 YEARS WITH VSOURCE"
+  },
+  {
+    "name": "Mr. Akram",
+    "position": "Director, Admissions",
+    "image": "https://vsourceoverseas.com/uploads/about_team/AKRAM.jpeg",
+    "bio": "12 YEARS WITH VSOURCE"
+  },
+  {
+    "name": "Mr. Satyam Tomer",
+    "position": "Chief Technical Officer",
+    "image": "https://vsourceoverseas.com/uploads/about_team/team9.jpg",
+    "bio": "12 YEARS WITH VSOURCE"
+  },
+  {
+    "name": "Mr. Virendra Singh",
+    "position": "Vice President",
+    "image": "https://vsourceoverseas.com/uploads/about_team/team2.jpg",
+    "bio": "VSOURCE COMPANY"
+  },
+  {
+    "name": "Mr. Vijay Kumar",
+    "position": "Chief Advisor",
+    "image": "https://vsourceoverseas.com/uploads/about_team/team10.jpg",
+    "bio": "VSOURCE GROUP"
+  },
+  {
+    "name": "Mr. Arun",
+    "position": "Chief Operating Officer",
+    "image": "https://vsourceoverseas.com/uploads/about_team/team14.jpg",
+    "bio": "10 YEARS WITH VSOURCE"
+  },
+  {
+    "name": "Mr. Tejesh Naidu",
+    "position": "Director, Operations",
+    "image": "https://vsourceoverseas.com/uploads/about_team/TEJA.gif",
+    "bio": "VSOURCE COMPANY"
+  },
+  {
+    "name": "Mr. Rajashekar",
+    "position": "Director, Education",
+    "image": "https://vsourceoverseas.com/uploads/about_team/team15.jpg",
+    "bio": "9 YEARS WITH VSOURCE"
+  },
+  {
+    "name": "Mr. Habib",
+    "position": "Director, Marketing",
+    "image": "https://vsourceoverseas.com/uploads/about_team/GVGCFCFVGHBHJBHJB.jpeg",
+    "bio": "10 YEARS WITH VSOURCE"
+  },
+  {
+    "name": "Mr. Jagan Mohan",
+    "position": "Director, Fintech",
+    "image": "https://vsourceoverseas.com/uploads/about_team/JAGAN.jpeg",
+    "bio": "100% EDUCATION LOANS"
+  },
+  {
+    "name": "Mrs. Pushpalatha Reddy",
+    "position": "Director, Overseas",
+    "image": "https://vsourceoverseas.com/uploads/about_team/PUSHPALATHA.jpg",
+    "bio": "7 YEARS WITH VSOURCE"
+  },
+  {
+    name: "Dr. Giorgi Mikadze",
+    position: "Director, Services. LLC",
+    image: "https://vsourceoverseas.com/uploads/about_team/team19.jpg",
+    bio: "Based in Georgia, specializing in services management."
+  },
+  {
+    name: "Dr. Mariam Kandelaki",
+    position: "Director, Student Welfare",
+    image: "https://vsourceoverseas.com/uploads/about_team/mariam.jpeg",
+    bio: "Focused on student welfare initiatives in Georgia."
+  },
+  {
+    name: "Mr. Sreenath Reddy",
+    position: "Director, Administration",
+    image: "https://vsourceoverseas.com/uploads/about_team/SREENATH.jpeg",
+    bio: "Leads administrative operations at VSOURCE Company."
+  },
+  {
+    name: "Ms. K Chaithanya",
+    position: "HR",
+    image: "https://vsourceoverseas.com/uploads/about_team/SDVSVSV.jpeg",
+    bio: "Human Resources specialist at VSOURCE Company."
+  },
+  {
+    name: "Mr. Narun Reddy",
+    position: "Head, Marketing",
+    image: "https://vsourceoverseas.com/uploads/about_team/IMG_20231218_225108.jpg",
+    bio: "Heads marketing operations for VSOURCE Varsity."
+  },
+  {
+    name: "Ms. Navya",
+    position: "Head, Marketing",
+    image: "https://vsourceoverseas.com/uploads/about_team/IMG20231031161907.jpg",
+    bio: "Marketing lead for VSOURCE Overseas."
+  },
+  {
+    name: "Ms. Deepika",
+    position: "Incharge, B.P.O",
+    image: "https://vsourceoverseas.com/uploads/about_team/1698855451.jpg",
+    bio: "Manages B.P.O operations at VSOURCE Fintech."
+  },
+  {
+    name: "Ms. Radha",
+    position: "Branch Manager",
+    image: "https://vsourceoverseas.com/uploads/about_team/team11.jpg",
+    bio: "Branch Manager in Bengaluru."
+  },
+  {
+    name: "Mr. Mahesh",
+    position: "Incharge, B.P.O",
+    image: "https://vsourceoverseas.com/uploads/about_team/MMAHESH.jpeg",
+    bio: "B.P.O operations lead at VSOURCE Overseas."
+  },
+  {
+    name: "Mr. Kumar",
+    position: "Branch Manager",
+    image: "https://vsourceoverseas.com/uploads/about_team/team16.jpg",
+    bio: "Branch Manager in Ongole."
+  },
+  {
+    name: "Mr. Srinivas Chowdary",
+    position: "Branch Manager",
+    image: "https://vsourceoverseas.com/uploads/about_team/KCJAHBH651566.jpeg",
+    bio: "Branch Manager in Tirupati."
+  },
+  {
+    name: "Mr. Srinadh Yadav",
+    position: "Branch Manager",
+    image: "https://vsourceoverseas.com/uploads/about_team/IMG_20240110_203715.jpg",
+    bio: "Branch Manager in Vijayawada."
+  },
+  {
+    name: "Mr. Kiran Kumar",
+    position: "Branch Manager",
+    image: "https://vsourceoverseas.com/uploads/about_team/1698844684.jpg",
+    bio: "Branch Manager in Vizag."
+  },
+  {
+    name: "Ms. Nikhitha",
+    position: "Branch Manager",
+    image: "https://vsourceoverseas.com/uploads/about_team/IMG_20231202_140712.jpg",
+    bio: "Branch Manager in Dilsukhnagar."
+  },
+  {
+    name: "Mr. Raj",
+    position: "Branch Manager",
+    image: "https://vsourceoverseas.com/uploads/about_team/IMG_3419.jpg",
+    bio: "Branch Manager in Ameerpet."
+  },
+  {
+    name: "Ms. Spandana",
+    position: "Branch Manager",
+    image: "https://vsourceoverseas.com/uploads/about_team/IMG20231031165409.jpg",
+    bio: "Branch Manager in Kukatpally."
+  },
+  {
+    name: "Mrs. Tako",
+    position: "Administration",
+    image: "https://vsourceoverseas.com/uploads/about_team/tako.jpeg",
+    bio: "Part of the administration team in Georgia."
+  },
+  {
+    name: "Mr. Zaza",
+    position: "Administration",
+    image: "https://vsourceoverseas.com/uploads/about_team/PHOTO-2023-12-18-18-53-31.jpg",
+    bio: "Administration team member based in Georgia."
+  },
+  {
+    name: "Mr. Aleksandre",
+    position: "Accountant",
+    image: "https://vsourceoverseas.com/uploads/about_team/21team.jpg",
+    bio: "Accountant based in Georgia."
+  },
+  {
+    name: "Ms. Nino",
+    position: "Administration",
+    image: "https://vsourceoverseas.com/uploads/about_team/kscjanusdbjnj.jpeg",
+    bio: "Administration team member in Georgia."
+  },
+  {
+    name: "Mr. Dimitrilp",
+    position: "Administration",
+    image: "https://vsourceoverseas.com/uploads/about_team/PHOTO-2023-12-20-12-57-15.jpg",
+    bio: "Administration team member in Georgia."
+  },
+  {
+    name: "Mr. Noorbaz Khan Qaderi",
+    position: "Administration",
+    image: "https://vsourceoverseas.com/uploads/about_team/team22Copy1.jpg",
+    bio: "Administration team member in Russia."
+  },
+  {
+    name: "Mrs. Shaista Ashraf",
+    position: "Head Admissions",
+    image: "https://vsourceoverseas.com/uploads/about_team/1684232284.jpg",
+    bio: "Oversees admissions in UAE and Saudi Arabia."
+  },
     {
-      name: "Durga Kumar Kamineni",
-      position: "Chairman",
-      image: "/lovable-uploads/327ec175-7574-4053-94b3-d44c2dbd1f46.png",
-      experience: "25+ years",
-      bio: "Founded Vsource Company with a vision to provide quality education consultancy to students across India."
-    },
-    {
-      name: "Charan Teja",
-      position: "CEO",
-      image: "/lovable-uploads/454f7683-4b97-4728-abc0-59dfe25347ab.png",
-      experience: "15+ years",
-      bio: "Leads the company with innovative strategies and a commitment to student success."
-    },
-    {
-      name: "Team Member 3",
-      position: "Director of Admissions",
-      image: "/lovable-uploads/f046468d-ee24-4af2-98e0-22a9935c90b6.png",
-      experience: "12+ years",
-      bio: "Expert in university admissions with a track record of successful placements."
-    },
-    {
-      name: "Team Member 4",
-      position: "Director of International Relations",
-      image: "/lovable-uploads/f046468d-ee24-4af2-98e0-22a9935c90b6.png",
-      experience: "10+ years",
-      bio: "Specializes in overseas education and international university partnerships."
-    },
+    "name": "Mr. NITHIN",
+    "position": "Sr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/IMG_20231220_093457.jpg",
+    "bio": "Associated with VSOURCE OVERSEAS."
+  },
+  {
+    "name": "Mr. SHAIK GAFOOR",
+    "position": "Sr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/GAFOOR.gif",
+    "bio": "Associated with VSOURCE OVERSEAS."
+  },
+  {
+    "name": "Mr. VENKATA SASIKUMAR",
+    "position": "Sr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/SASI.jpeg",
+    "bio": "Associated with VSOURCE VARSITY."
+  },
+  {
+    "name": "Mr. MAHESH PATIL",
+    "position": "Sr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/MAHESH.jpeg",
+    "bio": "Associated with VSOURCE OVERSEAS."
+  },
+  {
+    "name": "Mr. BHANU SAI PRAKASH",
+    "position": "Sr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/BHANU.JPG",
+    "bio": "Associated with VSOURCE OVERSEAS."
+  },
+  {
+    "name": "Mr. RADHA KRISHNA",
+    "position": "Sr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/RADHA.jpeg",
+    "bio": "Associated with VSOURCE VARSITY."
+  },
+  {
+    "name": "Mr. VENKAT",
+    "position": "Sr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/VENKAT.jpeg",
+    "bio": "Associated with VSOURCE FINTECH."
+  },
+  {
+    "name": "Mr. SHAIK MOULALI",
+    "position": "Sr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/MOU.jpeg",
+    "bio": "Associated with VSOURCE FINTECH."
+  },
+  {
+    "name": "Mr. NAGARAJU",
+    "position": "Sr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/NAGARAJU.jpeg",
+    "bio": "Associated with VSOURCE FINTECH."
+  },
+  {
+    "name": "Ms. KAVYASREE",
+    "position": "Sr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/IMG-20231201-WA0011-removebg-preview.png",
+    "bio": "Associated with VSOURCE FINTECH."
+  },
+  {
+    "name": "Mr. MAHESH GOUD",
+    "position": "Sr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/MAHESHGOUD.jpeg",
+    "bio": "Associated with VSOURCE FINTECH."
+  },
+  {
+    "name": "Mr. RAKESH",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/RAKESH.jpeg",
+    "bio": "Associated with VSOURCE OVERSEAS."
+  },
+  {
+    "name": "Mr. SHAIK MUNEER",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/MUNEER.jpeg",
+    "bio": "Associated with VSOURCE VARSITY."
+  },
+  {
+    "name": "Mr. M PAVAN",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/MPAVAN.jpeg",
+    "bio": "Associated with VSOURCE OVERSEAS."
+  },
+    
+  {
+    "name": "Ms. DIVYA",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/DIVYA.jpeg",
+    "bio": "Associated with VSOURCE OVERSEAS."
+  },
+  {
+    "name": "Mr. ATHAR PASHA",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/ATHAR.jpeg",
+    "bio": "Associated with VSOURCE VARSITY."
+  },
+  {
+    "name": "MR. NAGA VENKATESJH",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/nagavenkatesh.jpeg",
+    "bio": "Associated with VSOURCE OVERSEAS."
+  },
+  {
+    "name": "Mr. S PAVAN",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/SPAVAN.jpeg",
+    "bio": "Associated with VSOURCE OVERSEAS."
+  },
+  {
+    "name": "Mr. BHANU SAIRAM",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/BHANUSAIRAM.jpeg",
+    "bio": "Associated with VSOURCE VARSITY."
+  },
+  {
+    "name": "Mr. VIJAY",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/VIJAY.jpg",
+    "bio": "Associated with VSOURCE OVERSEAS."
+  },
+  {
+    "name": "Mr. SUBRAHMANYAM",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/SUBR.jpeg",
+    "bio": "Associated with VSOURCE VARSITY."
+  },
+  {
+    "name": "Mr. LAKSHMAN",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/LAKSHMAN.jpeg",
+    "bio": "Associated with VSOURCE FINTECH."
+  },
+  {
+    "name": "Mr. MOHAN KRISHNA",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/MOHAN.jpeg",
+    "bio": "Associated with VSOURCE FINTECH."
+  },
+  {
+    "name": "Mr. RAMU",
+    "position": "Jr. ASSOCIATE",
+    "image": "https://vsourceoverseas.com/uploads/about_team/RAMU.jpeg",
+    "bio": "Associated with VSOURCE FINTECH."
+  },
+  {
+    "name": "Mr. FAHAD",
+    "position": "DIGITAL MARKETING",
+    "image": "https://vsourceoverseas.com/uploads/about_team/Snapseed.jpeg",
+    "bio": "Specialist in digital marketing for VSOURCE OVERSEAS."
+  },
+  {
+    "name": "Mr. VAMSHI",
+    "position": "DIGITAL MARKETING",
+    "image": "https://vsourceoverseas.com/uploads/about_team/VAMSHI.jpeg",
+    "bio": "Specialist in digital marketing for VSOURCE VARSITY."
+  },
+  {
+    "name": "Mr. Purushotham Reddy",
+    "position": "GROUND MARKETING",
+    "image": "https://vsourceoverseas.com/uploads/about_team/team24.jpg",
+    "bio": "Ground marketing expert for Andhra & Telangana."
+  }
+
+
+    
   ];
 
   return (
@@ -48,7 +529,7 @@ const AboutPage = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About Vsource Company</h1>
             <p className="text-xl text-gray-300">
-              Learn about our journey, our team, and our mission to provide exceptional 
+              Learn about our journey, our team, and our mission to provide exceptional
               educational consultancy for over 20 years.
             </p>
           </div>
@@ -64,28 +545,28 @@ const AboutPage = () => {
                 <h2 className="text-3xl font-bold mb-6">Our Story</h2>
                 <div className="space-y-4">
                   <p className="text-lg text-gray-700">
-                    Vsource Company was established in 2002 with a clear mission: to bridge the gap 
+                    Vsource Company was established in 2002 with a clear mission: to bridge the gap
                     between ambitious students and quality education opportunities both in India and abroad.
                   </p>
                   <p className="text-lg text-gray-700">
-                    What began as a small consultancy has grown into a comprehensive 
+                    What began as a small consultancy has grown into a comprehensive
                     educational services provider with multiple branches across India.
                   </p>
                   <p className="text-lg text-gray-700">
-                    Through two decades of service, we have maintained our commitment to 
+                    Through two decades of service, we have maintained our commitment to
                     personalized guidance, ethical practices, and student-centric solutions.
                   </p>
                 </div>
               </div>
             </AnimateOnScroll>
-            
+
             <AnimateOnScroll delay={200}>
               <div className="relative">
                 <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full"></div>
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-tertiary/10 rounded-full"></div>
-                <img 
-                  src="/lovable-uploads/b5b42637-3407-4f15-bba6-e67d8998c48a.png"
-                  alt="Vsource Company Office" 
+                <img
+                  src="https://vsourceoverseas.com/uploads/gallery/16.jpeg"
+                  alt="Vsource Company Office"
                   className="rounded-lg shadow-lg relative z-10 w-full"
                 />
               </div>
@@ -93,102 +574,92 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      
-    {/* Chairman Section */}
-<section className="py-16 md:py-24 bg-gray-50">
-  <div className="container mx-auto px-4">
-    <SectionTitle 
-      title="Leadership"
-      subtitle="Meet our visionary chairman who leads Vsource Company"
-    />
-    
-    <AnimateOnScroll>
-      <div className="mt-12 max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-        <div className="md:flex">
-          {/* Chairman Image */}
-          <div className="md:w-1/2 w-full bg-white flex items-center justify-center md:h-[500px] p-4">
-            <img 
-              src="https://vsourceadmissions.com/upload_data/founder.png"
-              alt="Durga Kumar Kamineni" 
-              className="w-full h-full object-contain"
-            />
-          </div>
 
-          {/* Chairman Info */}
-          <div className="p-6 md:p-8 md:w-1/2">
-          <div className="uppercase tracking-wide text-lg md:text-xl text-primary font-bold">Chairman</div>
+      {/* Chairman Section */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <SectionTitle
+            title="Leadership"
+            subtitle="Meet our visionary chairman who leads Vsource Company"
+          />
 
-            <h2 className="mt-2 text-2xl font-semibold">Durga Kumar Kamineni</h2>
-            <p className="mt-2 text-gray-500">25+ Years of Experience</p>
-            <p className="mt-4 text-gray-600">
-              "Redefining Education for Tomorrow's Innovators"
-            </p>
-            <p className="mt-4 text-gray-600">
-              Mr. Durga Kumar Kamineni founded Vsource Company with a vision to transform 
-              the educational landscape in India. Under his leadership, the company has grown 
-              from a small consultancy to a leading name in educational services.
-            </p>
-            <p className="mt-4 text-gray-600">
-              His dedication to providing quality guidance and his extensive network in the 
-              education sector has benefited thousands of students in their academic journeys.
-            </p>
-          </div>
+          <AnimateOnScroll>
+            <div className="mt-12 max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="md:flex">
+                {/* Chairman Image */}
+                <div className="md:w-1/2 w-full bg-white flex items-center justify-center md:h-[500px] p-4">
+                  <img
+                    src="https://vsourceadmissions.com/upload_data/founder.png"
+                    alt="Durga Kumar Kamineni"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
+                {/* Chairman Info */}
+                <div className="p-6 md:p-8 md:w-1/2">
+                  <div className="uppercase tracking-wide text-lg md:text-xl text-primary font-bold">Chairman</div>
+
+                  <h2 className="mt-2 text-2xl font-semibold">Durga Kumar Kamineni</h2>
+                  <p className="mt-2 text-gray-500">25+ Years of Experience</p>
+                  <p className="mt-4 text-gray-600">
+                    "Redefining Education for Tomorrow's Innovators"
+                  </p>
+                  <p className="mt-4 text-gray-600">
+                    Mr. Durga Kumar Kamineni founded Vsource Company with a vision to transform
+                    the educational landscape in India. Under his leadership, the company has grown
+                    from a small consultancy to a leading name in educational services.
+                  </p>
+                  <p className="mt-4 text-gray-600">
+                    His dedication to providing quality guidance and his extensive network in the
+                    education sector has benefited thousands of students in their academic journeys.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </AnimateOnScroll>
         </div>
-      </div>
-    </AnimateOnScroll>
-  </div>
-</section>
+      </section>
 
 
 
       {/* Team Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <SectionTitle 
+          <SectionTitle
             title="Our Management Team"
             subtitle="Meet the experts who make Vsource Company a trusted name in educational consultancy"
           />
+
+          <>
+            <section className="py-16 md:py-24">
+              <div className="container mx-auto px-4">
+                <SectionTitle
+                  title="Our Management Team"
+                  subtitle="Meet the experts who make Vsource Company a trusted name in educational consultancy"
+                />
+                <StyledTeamWrapper>
+                  <div className="main">
+                    {teamMembers.map((member, index) => (
+                      <div className="profile-card" key={index}>
+                        <div className="img">
+                          <img src={member.image} alt={member.name} />
+                        </div>
+                        <div className="caption">
+                          <h3>{member.name}</h3>
+                          <p>{member.position}</p>
+                        </div>
+                        <div className="extra-info">{member.bio}</div>
+                      </div>
+                    ))}
+                  </div>
+                </StyledTeamWrapper>
+              </div>
+            </section>
+          </>
           
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.slice(1).map((member, index) => (
-              <AnimateOnScroll key={index} delay={index * 100}>
-                <div className="group">
-                  <div className="relative overflow-hidden rounded-xl bg-white shadow-lg h-[400px] perspective">
-                    <div className="absolute inset-0 preserve-3d transition-transform duration-700 ease-in-out group-hover:rotate-y-180">
-                      {/* Front - Photo */}
-                      <div className="absolute inset-0 backface-hidden">
-                        <div className="h-64 overflow-hidden">
-                          <img 
-                            src={member.image} 
-                            alt={member.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="p-6">
-                          <h3 className="text-xl font-semibold">{member.name}</h3>
-                          <p className="text-primary">{member.position}</p>
-                        </div>
-                      </div>
-                      
-                      {/* Back - Info */}
-                      <div className="absolute inset-0 backface-hidden rotate-y-180 bg-darkblue text-white p-6 flex flex-col justify-center">
-                        <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                        <p className="text-primary mb-4">{member.position}</p>
-                        <p className="mb-4">Experience: {member.experience}</p>
-                        <p className="text-sm">{member.bio}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-3 text-center text-sm text-gray-500">
-                    Hover to see more information
-                  </div>
-                </div>
-              </AnimateOnScroll>
-            ))}
-          </div>
         </div>
       </section>
-      
+
       {/* Vision & Mission */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -203,12 +674,12 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
                 <p className="text-gray-700">
-                  To be the leading educational consultancy in India, recognized for our integrity, 
+                  To be the leading educational consultancy in India, recognized for our integrity,
                   personalized approach, and consistent delivery of successful academic and career outcomes for our students.
                 </p>
               </div>
             </AnimateOnScroll>
-            
+
             <AnimateOnScroll delay={200}>
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <div className="w-16 h-16 rounded-full bg-tertiary/10 flex items-center justify-center mb-6">
@@ -218,7 +689,7 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                 <p className="text-gray-700">
-                  To empower students with comprehensive guidance, accurate information, and supportive resources 
+                  To empower students with comprehensive guidance, accurate information, and supportive resources
                   that enable them to make informed decisions about their educational and career paths, both in India and abroad.
                 </p>
               </div>
