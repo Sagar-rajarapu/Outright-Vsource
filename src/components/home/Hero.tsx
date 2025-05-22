@@ -1,15 +1,31 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+const animatedTexts = [
+  ["B.Tech Admissions -2025", "in NAAC A, A+, A++ UNIVERSITIES"],
+  ["STUDY MASTER’S", "IN USA, UK IRELAND, CANADA, FRANCE"],
+  ["MBBS ABROAD", "IN GEORGIA , RUSSIA"],
+  ["100% EDUCATION LOAN", "LOAN SANCTION WITHIN 24 hrs"],
+];
+
 
 const Hero = () => {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % animatedTexts.length);
+    }, 3000); // Change every 3 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center text-white overflow-hidden pt-16 md:pt-0">
-      {/* Fixed Background Image */}
+      {/* Background Image */}
       <div
         className="absolute inset-0 z-0 bg-center bg-cover bg-no-repeat bg-fixed"
-
         style={{ backgroundImage: "url('/assets/images/display girl.jpg')" }}
       >
-        {/* Fallback Image */}
         <img
           src="/assets/images/display girl.jpg"
           alt="Background Fallback"
@@ -22,62 +38,123 @@ const Hero = () => {
         />
       </div>
 
-      {/* Reduced Dark Overlay */}
+      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-darkblue/40 z-10" />
 
       {/* Main Content */}
       <div className="container mx-auto px-4 z-20 text-center lg:text-left">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight pt-6 md:pt-10">
-              Redefining <span className="text-primary">Education</span> for Tomorrow's Innovators
-            </h1>
-            <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-xl mx-auto lg:mx-0">
-              Your trusted educational consultancy with 20+ years of experience in guiding students towards successful academic and professional futures.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link to="/contact" className="btn bg-primary hover:bg-red-700 text-white py-3 px-6 md:px-8 rounded-full text-base">
-                Contact Us
-              </Link>
-              <Link to="/about-us" className="btn bg-white/10 text-white hover:bg-white/20 py-3 px-6 md:px-8 rounded-full text-base backdrop-blur-sm">
-                Learn More
-              </Link>
-            </div>
-            <div className="mt-4 bg-white/20 backdrop-blur-md p-4 rounded-xl inline-flex items-center justify-center">
-              <div className="h-14 w-14 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-base">20+</span>
-              </div>
-              <div className="ml-3">
-                <p className="font-semibold text-base">Years of Trust and Genuine Service</p>
-              </div>
-            </div>
-            <div className="pt-6"> 
-              <p className="text-sm text-gray-400 mb-2">Trusted by students across the globe</p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 items-center">
-                <div className="flex items-center">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3, 4].map(i => (
-                      <div 
-                        key={i} 
-                        className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-300 border-2 border-darkblue flex items-center justify-center text-xs text-darkblue font-bold"
-                      >
-                        {i}
-                      </div>
-                    ))}
-                  </div>
-                  <span className="ml-2 text-xs md:text-sm">+100,000 students</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <span className="text-yellow-500 text-sm md:text-base">★★★★★</span>
-                  <span className="text-xs md:text-sm">4.9/5 rating</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* ===================== DESKTOP VERSION ===================== */}
+          <div className="hidden md:block space-y-6 pt-28">
+  {/* Heading */}
+  <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-center lg:text-left">
+    Redefining <span className="text-primary">Education</span> for Tomorrow's Innovators
+  </h1>
 
-          {/* Right Image & "20 Years" Badge for Desktop */}
-          {/* Uncomment if needed */}
-         
+  {/* Description */}
+  <p className="text-lg lg:text-xl text-gray-300 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+    Your trusted educational consultancy with 20+ years of experience in guiding students towards successful academic and professional futures.
+  </p>
+
+  {/* 20 Years Logo */}
+  <div className="flex justify-center">
+    <img
+      src="/assets/images/20 years logo.png"
+      alt="20 Years Logo"
+      className="w-36 h-auto"
+    />
+  </div>
+
+  {/* Animated Text */}
+  <div className="mt-4 p-5 bg-white/20 backdrop-blur-md rounded-xl max-w-2xl w-full mx-auto text-center text-white min-h-[90px] flex flex-col justify-center">
+    {animatedTexts[currentTextIndex].map((line, i) => (
+      <p key={i} className="text-lg font-semibold leading-tight animate-fade-in transition-opacity duration-500 ease-in-out">
+        {line}
+      </p>
+    ))}
+  </div>
+
+  {/* Student Count & Rating */}
+  <div className="pt-6 pb-20">
+    <p className="text-sm text-gray-400 mb-2 text-center lg:text-left">Trusted by students across the globe</p>
+    <div className="flex flex-wrap gap-6 items-center justify-center lg:justify-start">
+      <div className="flex items-center">
+        <div className="flex -space-x-2">
+          {[1, 2, 3, 4].map((i) => (
+            <div
+              key={i}
+              className="w-8 h-8 rounded-full bg-gray-300 border-2 border-darkblue flex items-center justify-center text-xs text-darkblue font-bold"
+            >
+              {i}
+            </div>
+          ))}
+        </div>
+        <span className="ml-2 text-sm">+100,000 students</span>
+      </div>
+      <div className="flex items-center gap-1">
+        <span className="text-yellow-500 text-base">★★★★★</span>
+        <span className="text-sm">4.9/5 rating</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{/* //mobile version  */}
+<div className="md:hidden flex flex-col items-center text-left space-y-4 pt-24 px-4">
+  {/* Heading - Left aligned */}
+  <h1 className="text-3xl font-bold leading-tight w-full text-left">
+    Redefining <span className="text-primary">Education</span> for Tomorrow's Innovators
+  </h1>
+
+  {/* 20 Years Logo - Centered */}
+  <div className="w-full flex justify-center">
+    <img
+      src="/assets/images/20 years logo.png"
+      alt="20 Years Logo"
+      className="w-24 h-auto mt-2"
+    />
+  </div>
+
+  {/* Animated Text - Centered */}
+  <div className="mt-4 p-4 pt-6 text-sm text-white bg-white/20 backdrop-blur-md rounded-xl w-full max-w-xs min-h-[90px] flex flex-col justify-center items-center">
+    {animatedTexts[currentTextIndex].map((line, i) => (
+      <p
+        key={i}
+        className="text-white font-semibold leading-tight animate-fade-in transition-opacity duration-500 ease-in-out text-center"
+      >
+        {line}
+      </p>
+    ))}
+  </div>
+
+  {/* Student Count & Rating */}
+  <div className="pt-6">
+    <p className="text-xs text-gray-400 mb-2 text-center">Trusted by students across the globe</p>
+    <div className="flex flex-wrap gap-4 justify-center items-center">
+      <div className="flex items-center">
+        <div className="flex -space-x-2">
+          {[1, 2, 3, 4].map((i) => (
+            <div
+              key={i}
+              className="w-6 h-6 rounded-full bg-gray-300 border-2 border-darkblue flex items-center justify-center text-xs text-darkblue font-bold"
+            >
+              {i}
+            </div>
+          ))}
+        </div>
+        <span className="ml-2 text-xs">+100,000 students</span>
+      </div>
+      <div className="flex items-center gap-1">
+        <span className="text-yellow-500 text-sm">★★★★★</span>
+        <span className="text-xs">4.9/5 rating</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         </div>
       </div>

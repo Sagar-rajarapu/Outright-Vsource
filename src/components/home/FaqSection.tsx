@@ -83,7 +83,7 @@ const FaqSection = forwardRef<HTMLDivElement>((props, ref) => {
               Still have questions? Our education experts are ready to help!
             </p>
             <button 
-              onClick={openGreenPopup}
+              onClick={() => openGreenPopup()}
               className="px-8 py-3 bg-primary text-white font-medium rounded-full hover:bg-red-600 transition-colors"
             >
               Get Expert Advice

@@ -80,11 +80,12 @@ const CounterSection = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-16 bg-gray-50">
+    <section ref={sectionRef} className="py-8 md:py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat) => {
-            const count = useCounter(stat.value);
+          {stats.map((stat, index) => {
+            const counts = stats.map(s => useCounter(s.value));
+            const count = counts[index];
 
             return (
               <AnimateOnScroll key={stat.id} delay={stat.id * 100}>

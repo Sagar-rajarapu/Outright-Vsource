@@ -3,34 +3,31 @@ import SectionTitle from "../SectionTitle";
 import AnimateOnScroll from "../AnimateOnScroll";
 
 const ScholarshipsSection = () => {
-  const universityLogos = [
-    "https://vsourceadmissions.com/assets/images/VSINDIA2.png",
-    "https://www.gouk.in/v1.0.1/assets/universities-icons/University-of-Sheffield.webp",
-    "https://www.gouk.in/v1.0.1/assets/universities-icons/University-of-York.webp",
-    "https://www.gouk.in/v1.0.1/assets/universities-icons/University-of-Aberdeen.webp",
-    "https://www.gouk.in/v1.0.1/assets/universities-icons/Cardiff-University.webp",
-    "https://www.gouk.in/v1.0.1/assets/universities-icons/Harper-Adams-University.webp",
-    "https://www.gouk.in/v1.0.1/assets/universities-icons/Cardiff-University.webp",
-    "https://www.gouk.in/v1.0.1/assets/universities-icons/University-of-Surrey.webp",
-    "https://www.gouk.in/v1.0.1/assets/universities-icons/University-of-East-Anglia.webp",
-    "https://www.gouk.in/v1.0.1/assets/universities-icons/University-of-Southampton.webp",
-    "https://www.gouk.in/v1.0.1/assets/universities-icons/University-of-Lincoln.webp",
-    "https://www.gouk.in/v1.0.1/assets/universities-icons/University-of-Westminster.webp"
-  ];
+  const ukFlag = "https://img.freepik.com/free-vector/illustration-uk-flag_53876-18166.jpg?semt=ais_hybrid&w=740";
+  const usaFlag = "https://cdn.britannica.com/33/4833-050-F6E415FE/Flag-United-States-of-America.jpg";
 
   const scholarshipsData = [
-    { studentName: "Mary Ashish", amount: "₹6,43,472", gender: "male" },
-    { studentName: "Meera Pranesh", amount: "₹6,43,000", gender: "male" },
-    { studentName: "Trupti Pranesh", amount: "₹6,42,572", gender: "female" },
-    { studentName: "Trupti", amount: "₹6,41,000", gender: "female" },
-    { studentName: "Abhirup", amount: "₹6,03,202", gender: "male" },
-    { studentName: "Aditya Ashish", amount: "₹3,20,736", gender: "male" },
-    { studentName: "Mary Ashish", amount: "₹6,43,472", gender: "male" },
-    { studentName: "Meera Pranesh", amount: "₹6,43,000", gender: "female" },
-    { studentName: "Trupti Pranesh", amount: "₹6,42,572", gender: "female" },
-    { studentName: "Trupti", amount: "₹6,41,000", gender: "female" },
-    { studentName: "Abhirup", amount: "₹6,03,202", gender: "male" },
-    { studentName: "Aditya Ashish", amount: "₹3,20,736", gender: "male" }
+    { studentName: "Dakannagari Rohith Reddy", amount: "₹4,90,000", country: "USA", gender: "male" },
+    { studentName: "Aninash Yadav", amount: "₹5,80,000", country: "UK", gender: "male" },
+    { studentName: "Duddempudi Sahana", amount: "₹6,60,000", country: "USA", gender: "female" },
+    { studentName: "Asar Ali Mohammed", amount: "₹7,20,000", country: "UK", gender: "male" },
+    { studentName: "Harsha Vardhan Reddy", amount: "₹5,20,000", country: "USA", gender: "male" },
+    { studentName: "Ashritha Reddy Beerelly", amount: "₹6,95,000", country: "UK", gender: "female" },
+    { studentName: "Kannikanti Geethika Chowdary", amount: "₹6,30,000", country: "USA", gender: "female" },
+    { studentName: "Bojja Glory", amount: "₹5,40,000", country: "UK", gender: "female" },
+    { studentName: "Khyathi Raguru", amount: "₹6,00,000", country: "USA", gender: "female" },
+    { studentName: "Deekshith Kumar Gudepu", amount: "₹6,10,000", country: "UK", gender: "male" },
+    { studentName: "Nithya Sree Bussu", amount: "₹5,90,000", country: "USA", gender: "female" },
+    { studentName: "Kathi Tulasi", amount: "₹7,35,000", country: "UK", gender: "female" },
+    { studentName: "Preethi Kalva", amount: "₹4,80,000", country: "USA", gender: "female" },
+    { studentName: "Moghal Saheera Begum", amount: "₹6,00,000", country: "UK", gender: "female" },
+    { studentName: "Sravya Sree Bussu", amount: "₹6,55,000", country: "USA", gender: "female" },
+    { studentName: "Pakala Meghana Reddy", amount: "₹5,70,000", country: "UK", gender: "female" },
+    { studentName: "Soumya Gopagoni", amount: "₹6,50,000", country: "UK", gender: "female" },
+    { studentName: "Adavalli Tharun Kumar", amount: "₹6,43,000", country: "UK", gender: "male" },
+    { studentName: "Ummagani Sai Kumar", amount: "₹7,00,000", country: "UK", gender: "male" },
+    // Student with no country → assign UK
+    { studentName: "John Doe", amount: "₹5,50,000", country: "UK", gender: "male" }
   ];
 
   const tableRef = useRef<HTMLDivElement>(null);
@@ -75,7 +72,7 @@ const ScholarshipsSection = () => {
       <div className="container mx-auto px-6">
         <SectionTitle 
           title="80% of our students were awarded scholarships this year"
-          subtitle="Our students consistently receive impressive scholarships from top universities" 
+          subtitle="Our students consistently receive impressive scholarships from top destinations" 
         />
 
         <AnimateOnScroll>
@@ -90,7 +87,7 @@ const ScholarshipsSection = () => {
                 <thead className="bg-gray-100 sticky top-0 z-10">
                   <tr>
                     <th className="px-2 sm:px-6 py-4 text-left text-xs sm:text-sm font-semibold text-gray-700 uppercase tracking-wide">
-                      University
+                      Country
                     </th>
                     <th className="px-2 sm:px-6 py-4 text-left text-xs sm:text-sm font-semibold text-gray-700 uppercase tracking-wide">
                       Student Name
@@ -105,16 +102,16 @@ const ScholarshipsSection = () => {
                     <tr key={index} className="hover:bg-gray-50 transition-colors">
                       <td className="px-2 sm:px-6 py-3 sm:py-5">
                         <img 
-                          src={universityLogos[index % universityLogos.length]} 
-                          alt="University Logo"
-                          className="h-8 w-8 sm:h-12 sm:w-12 object-contain rounded-full"
+                          src={item.country === "USA" ? usaFlag : ukFlag} 
+                          alt={`${item.country} Flag`}
+                          className="h-8 w-12 object-cover rounded"
                         />
                       </td>
                       <td className="px-2 sm:px-6 py-3 sm:py-5">
                         <div className="flex items-center">
                           <img 
                             src={item.gender === 'female' ? '/assets/images/female icon.png' : '/assets/images/male icon.png'} 
-                            alt="Student Profile"
+                            alt="Gender Icon"
                             className="h-8 w-8 sm:h-12 sm:w-12 rounded-full mr-2 sm:mr-3"
                           />
                           <span className="text-sm sm:text-base font-medium text-gray-900">{item.studentName}</span>

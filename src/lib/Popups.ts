@@ -28,4 +28,6 @@ export const openGreenPopup = (program?: string) => {
 export const resetPopupPreferences = () => {
   localStorage.removeItem('vsource_form_submitted');
   sessionStorage.removeItem('vsource_popup_shown');
+  // Clear the canceled flag to allow the popup to show again
+  sessionStorage.removeItem('popup_canceled');
 }; 

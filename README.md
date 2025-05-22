@@ -40,8 +40,8 @@ A modern, responsive website for VSource Education Consultancy built with React,
 
 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/vsource-bento-connect.git
-cd vsource-bento-connect
+git clone https://github.com/Vsource-company/Outright-Vsource.git
+cd outright-vsource
 ```
 
 2. Install dependencies

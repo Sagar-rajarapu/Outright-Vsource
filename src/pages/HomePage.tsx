@@ -30,9 +30,9 @@ const HomePage = ({ faqRef }: HomePageProps) => {
       <Hero />
       <AboutSection />
       {/* <TrustSection /> */}
+      <CounterSection />
       <AccreditationSection />
       <StudyAbroadSection />
-      <CounterSection />
       <ServicesSection />
       <VideoSection />
       <CoursesSection />
@@ -40,7 +40,7 @@ const HomePage = ({ faqRef }: HomePageProps) => {
       <ScholarshipsSection />
       <ExperienceSection />
       <TestimonialsSection />
-      <FaqSection ref={faqRef} />
+      {/* <FaqSection ref={faqRef} /> */}
       {/* <CtaSection /> */}
     </>
   );

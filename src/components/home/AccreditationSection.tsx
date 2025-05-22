@@ -7,9 +7,9 @@ const Accreditation = () => {
   ];
 
   return (
-    <section className="py-12 bg-white overflow-hidden">
+    <section className="py-8 bg-white overflow-hidden">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-normal text-center text-black mb-8">
+        <h1 className="text-4xl font-normal text-center text-black mb-6">
           Accreditation & Memberships
         </h1>
 
@@ -29,7 +29,7 @@ const Accreditation = () => {
           </div>
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-6 text-center">
           <p className="text-sm text-gray-500">
             <b>"VSOURCE is proud to be associated with these prestigious organizations, 
             ensuring the highest standards of educational services."</b>
@@ -37,16 +37,17 @@ const Accreditation = () => {
         </div>
       </div>
 
-      {/* Custom animation */}
-      <style jsx>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 25s linear infinite;
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            animation: marquee 25s linear infinite;
+          }
+        `}
+      </style>
     </section>
   );
 };

@@ -4,113 +4,127 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 import styled from 'styled-components';
 
 const StyledTeamWrapper = styled.div`
-.team-details-area {
-    padding: 50px 0 140px !important;
-  }
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Exo", sans-serif;
-  }
+.profile-card {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  max-width: 220px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 22px #3336;
+  text-align: center;
+  transition: height 0.6s, transform 0.6s;
+  height: 295px;
+  overflow: hidden; /* Ensures text stays inside the card */
+}
 
-  h2.title {
-    text-align: center;
-    font-size: 42px;
-    margin-bottom: 40px;
-    color: black;
-  }
+.profile-card:hover {
+  height: 305px; /* Increased height to accommodate extra-info */
+}
 
-  .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
+.profile-card .img {
+  width: 100%;
+  height: 200px; /* Enforce consistent height for images */
+  border-radius: 10px;
+  transition: transform 0.6s;
+  position: relative;
+  z-index: 1; /* Keep the image on top of other elements */
+  overflow: auto; /* Ensures the image fits within the container */
+}
 
+.profile-card:hover .img {
+  transform: translateY(-30px); /* Subtle movement for hover effect */
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container properly */
+  border-radius: 10px;
+  box-shadow: 0 0 22px #3336;
+}
+
+.caption {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.6s, opacity 0.6s;
+}
+
+.profile-card:hover .caption {
+  transform: translateY(-10px); /* Subtle adjustment for hover effect */
+}
+
+.caption h2 {
+  font-size: 15px;
+  margin: 5px 0;
+  white-space: normal; /* Allows text wrapping */
+  overflow: hidden; /* Keeps text within the card */
+  text-overflow: ellipsis; /* Adds ellipsis if text overflows horizontally */
+  word-wrap: break-word; /* Breaks long words */
+}
+
+.caption p {
+  font-size: 12px;
+  color: #0c52a1;
+  margin: 0;
+  line-height: 1.rem;
+  white-space: normal; /* Allows text wrapping */
+  overflow: hidden; /* Keeps text within the card */
+  text-overflow: ellipsis; /* Adds ellipsis if text overflows horizontally */
+  word-wrap: break-word; /* Breaks long words */
+}
+
+.extra-info {
+  font-size: 12px;
+  color: #555;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.6s, opacity 0.6s;
+  white-space: normal; /* Allows text wrapping */
+  overflow: hidden; /* Ensures extra-info text remains within card */
+  word-wrap: break-word; /* Breaks long words */
+}
+
+.profile-card:hover .extra-info {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+@media (max-width: 600px) {
   .profile-card {
-    position: relative;
-    width: 220px;
+    max-width: 180px;
+    padding: 20px;
     height: 220px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 50%;
-    box-shadow: 0 0 22px #3336;
-    transition: 0.6s ease-in-out;
-    text-align: center;
   }
 
   .profile-card:hover {
-    border-radius: 10px;
-    height: 260px;
+    height: 240px;
   }
 
   .profile-card .img {
-    width: 100%;
-    height: 100%;
-    transition: 0.6s ease-in-out;
-    z-index: 99;
+    height: 120px; /* Adjust image size for smaller screens */
   }
 
-  .profile-card:hover .img {
-    transform: translateY(-60px);
-  }
-
-  .img img {
-    width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 22px #3336;
-    transition: 0.6s ease-in-out;
-  }
-
-  .profile-card:hover img {
-    border-radius: 10px;
-  }
-
-  .caption {
-    transform: translateY(-80px);
-    opacity: 0;
-    transition: 0.6s ease-in-out;
-  }
-
-  .profile-card:hover .caption {
-    opacity: 1;
-  }
-
-  .caption h3 {
-    font-size: 21px;
-    margin: 10px 0 5px;
+  .caption h2 {
+    font-size: 12px;
   }
 
   .caption p {
-    font-size: 15px;
-    color: #0c52a1;
-    margin-bottom: 10px;
+    font-size: 10px;
   }
+}
 
-  @media (max-width: 600px) {
-    .profile-card {
-      width: 180px;
-      height: 180px;
-      padding: 20px;
-    }
-
-    .profile-card:hover {
-      height: 230px;
-    }
-
-    .caption h3 {
-      font-size: 18px;
-    }
-
-    .caption p {
-      font-size: 14px;
-    }
-  }
 `;
-
 const AboutPage = () => {
   // Scroll to top on page load
   useEffect(() => {
@@ -565,7 +579,7 @@ const AboutPage = () => {
                 <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full"></div>
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-tertiary/10 rounded-full"></div>
                 <img
-                  src="https://vsourceoverseas.com/uploads/gallery/16.jpeg"
+                  src="/assets/images/about-as-service-contact-information-concept.jpg"
                   alt="Vsource Company Office"
                   className="rounded-lg shadow-lg relative z-10 w-full"
                 />
@@ -623,12 +637,7 @@ const AboutPage = () => {
 
 
       {/* Team Section */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <SectionTitle
-            title="Our Management Team"
-            subtitle="Meet the experts who make Vsource Company a trusted name in educational consultancy"
-          />
+     
 
           <>
             <section className="py-16 md:py-24">
@@ -645,7 +654,7 @@ const AboutPage = () => {
                           <img src={member.image} alt={member.name} />
                         </div>
                         <div className="caption">
-                          <h3>{member.name}</h3>
+                          <h2>{member.name}</h2>
                           <p>{member.position}</p>
                         </div>
                         <div className="extra-info">{member.bio}</div>
@@ -656,9 +665,7 @@ const AboutPage = () => {
               </div>
             </section>
           </>
-          
-        </div>
-      </section>
+      
 
       {/* Vision & Mission */}
       <section className="py-16 md:py-24 bg-gray-50">

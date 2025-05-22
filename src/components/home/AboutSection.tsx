@@ -28,30 +28,18 @@ const AboutSection = () => {
               <SectionTitle title="About Vsource Company" centered={false} />
               <div className="space-y-4">
                 <p className="text-lg text-gray-600">
-                  For over 20 years, Vsource Company has been at the forefront of educational consultancy,
-                  helping thousands of students achieve their academic and professional dreams.
+                For over 20 years, Vsource Company has been soul of educating, helping thousands of students achieve their dream destination.
                 </p>
                 <p className="text-lg text-gray-600">
-                  Founded with a vision to bridge the gap between students and quality education,
-                  we have evolved into a comprehensive consultancy offering services from university
-                  admissions to overseas education pathways and financial solutions.
+                Founded with a vision to bridge the gap between students and quality education, we have evolved into a comprehensive consultancy offering services from university admissions to overseas education pathways and financial solutions
                 </p>
                 <p className="text-lg text-gray-600">
-                  Under the leadership of our Chairman, Mr. Durga Kumar Kamineni, we continue to expand
-                  our horizons while maintaining our core values of integrity, excellence, and student success.
+                Under the leadership of our Chairman, Mr. Durga Kumar Kamineni, we continue to expand our horizons while maintaining our core values of integrity, excellence, and student success..
                 </p>
 
                 {/* Stats */}
-                <div className="mt-8 grid grid-cols-2 gap-4">
-                  <div className="border rounded-lg p-4 text-center">
-                    <h4 className="text-3xl font-bold text-primary">100,000+</h4>
-                    <p className="text-gray-600">Students Placed</p>
-                  </div>
-                  <div className="border rounded-lg p-4 text-center">
-                    <h4 className="text-3xl font-bold text-primary">200+</h4>
-                    <p className="text-gray-600">University Partners</p>
-                  </div>
-                </div>
+             
+                
               </div>
             </div>
           </AnimateOnScroll>
